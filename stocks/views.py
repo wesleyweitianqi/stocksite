@@ -4,7 +4,7 @@ from .stock_analysis import getStockInfo
 # Create your views here.
 
 def index(request):
-    return HttpResponse("hello, world. you're at the polls index")
+    return render(request, "index.html")
 
 def list(request):
     stockList = ["MSFT", "NVDA", "AAPL", "GOOG", "AMZN", "NFLX", "AMD"]
