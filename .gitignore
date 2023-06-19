@@ -1,0 +1,43 @@
+# Ignore virtual environment files
+yfenv/
+env/
+venv/
+
+# Ignore database files
+*.sqlite3
+*.db
+
+# Ignore static files
+staticfiles/
+
+# Ignore media files
+media/
+
+# Ignore local settings
+local_settings.py
+
+# Ignore IDE files
+.vscode/
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore sensitive information
+secret_key.txt
+*.env
+*.pyc
+
+# Ignore package build directories
+dist/
+build/
+*.egg-info/
+
+# Ignore deployment files
+.DS_Store
+deploy/
+
+# Ignore other project-specific files and directories
