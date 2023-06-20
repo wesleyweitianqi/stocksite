@@ -7,16 +7,30 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Stock List</h1>
+    <a href="/stocks">Back to Home</a>
+    <h5>Stock List</h5>
     <ul>
       {% for stockSymbol, stockInfo in stockData.items %}
       <li>
         <strong>{{ stockSymbol }}</strong>
-        <p>Current Price: {{ stockInfo.currentPrice }}</p>
-        <p>Percentage Increase: {{ stockInfo.percentageIncrease }}</p>
-        <a href="/list" >To List</a>
+        <span>Current Price: {{ stockInfo.currentPrice }}</span>
+        <span>Percentage Increase: {{ stockInfo.percentageIncrease }}</span>
       </li>
       {% endfor %}
     </ul>
+    <form action="{% url 'submit_form' %}" method="POST">
+      {% csrf_token %}
+      <!-- Form inputs here -->
+      <label>Enter ticker</label>
+      <input type="text" name="ticker" />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="response-container">
+      {% if data %}
+      <h2>{{ data }}</h2>
+      {% endif %}
+    </div>
   </body>
 </html>
